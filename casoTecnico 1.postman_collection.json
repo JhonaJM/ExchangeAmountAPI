@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "5da7e1aa-849a-4aea-981a-fe8ab2f3d32a",
+		"name": "casoTecnico 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14219764"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"kuku\",\r\n    \"password\" :\"kuku\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createExchange",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdWt1IiwiaWF0IjoxNzE4MTgzMTMyLCJleHAiOjE3MTgxODQwMzJ9.jbXTU58f4fsr9ByEF2htFks1m-TEsDLmRIi8mJ3fSC0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sourceCurrency\": \"USD\",\r\n  \"sourceAmount\": 300.0,\r\n  \"targetCurrency\": \"SOL\",\r\n  \"rate\": 3.60\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/exchange/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findExchanges",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdWt1IiwiaWF0IjoxNzE4MTgzMTMyLCJleHAiOjE3MTgxODQwMzJ9.jbXTU58f4fsr9ByEF2htFks1m-TEsDLmRIi8mJ3fSC0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sourceCurrency\": \"USD\",\r\n  \"targetCurrency\": \"SOL\",\r\n  \"rate\":3.60\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/exchange/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateExchange",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdWt1IiwiaWF0IjoxNzE4MTgzMTMyLCJleHAiOjE3MTgxODQwMzJ9.jbXTU58f4fsr9ByEF2htFks1m-TEsDLmRIi8mJ3fSC0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sourceCurrency\": \"USD\",\r\n  \"sourceAmount\": 222.0,\r\n  \"targetCurrency\": \"EUR\",\r\n  \"rate\": 0.85,\r\n  \"convertedAmount\": 85.0,\r\n  \"username\": \"example_user\",\r\n  \"dateOperation\": \"2024-06-13T12:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/exchange/update/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange",
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
